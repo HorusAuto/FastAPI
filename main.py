@@ -11,7 +11,7 @@ class Msg(BaseModel):
 async def root():
     return {"message": "Hello World. Welcome to FastAPI!"}
 
-@app.post("/path", methods=["POST"])
+@app.post("/webhook")
 async def demo_post(inp: Msg):
     return {"message": inp.msg.upper()}
 
