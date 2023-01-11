@@ -11,13 +11,7 @@ class Msg(BaseModel):
 async def root():
     return {"message": "Hello World. Welcome to FastAPI!"}
 
-
-@app.get("/path", methods=["POST"])
-async def demo_get():
-    return {"message": "This is /path endpoint, use a post request to transform the text to uppercase"}
-
-
-@app.post("/path")
+@app.post("/path", methods=["POST"])
 async def demo_post(inp: Msg):
     return {"message": inp.msg.upper()}
 
