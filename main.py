@@ -6,8 +6,7 @@ app = FastAPI()
 class Msg(BaseModel):
     msg: str
 
-
-@app.get("/")
+@app.post("/")
 async def root():
     return {"message": "Hello World. Welcome to FastAPI!"}
 
