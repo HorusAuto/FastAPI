@@ -18,3 +18,6 @@ async def demo_post(inp: Msg):
 @app.get("/path/{path_id}")
 async def demo_get_path_id(path_id: int):
     return {"message": f"This is /path/{path_id} endpoint, use post request to retrieve result"}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=os.getenv("PORT", default=5000), log_level="info")
